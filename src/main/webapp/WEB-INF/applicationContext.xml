@@ -23,27 +23,27 @@
 
     <mvc:annotation-driven/>
 
-<!--   <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
-<!--       <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>-->
-<!--       <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/training?useSSL=false"/>-->
-<!--       <property name="user" value="root"/>-->
-<!--       <property name="password" value="testtest"/>-->
-<!--   </bean>-->
+   <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+       <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+       <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/training?useSSL=false"/>
+       <property name="user" value="root"/>
+       <property name="password" value="testtest"/>
+   </bean>
 
-<!--    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">-->
-<!--        <property name="dataSource" ref="dataSource"/>-->
-<!--        <property name="packagesToScan" value="org.example.rest.entity"/>-->
-<!--        <property name="hibernateProperties">-->
-<!--            <props>-->
-<!--                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>-->
-<!--                <prop key="show_sql">true</prop>-->
-<!--            </props>-->
-<!--        </property>-->
-<!--    </bean>-->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="org.example.rest.entity"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="show_sql">true</prop>
+            </props>
+        </property>
+    </bean>
 
-<!--    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">-->
-<!--           <property name="sessionFactory" ref="sessionFactory"/>-->
-<!--    </bean>-->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+           <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>
