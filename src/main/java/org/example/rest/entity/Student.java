@@ -9,16 +9,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
-//@AllArgsConstructor
-//@NoArgsConstructor
-//@Data
-//@Entity
-//@Table(name="borrowers")
-public class Borrower {
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer borrower_id;
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
+@Table(name="students")
+public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String name;
-    private String email;
+    private Integer age;
+    private LocalDateTime registation_date;
 }
